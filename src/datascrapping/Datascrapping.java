@@ -16,12 +16,12 @@ public class Datascrapping {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ScrapAllData sad = new ScrapAllData();
-        sad.scrapAllDataInFile();
-     //  testProgram tp = new testProgram();
+       // ScrapAllData sad = new ScrapAllData();
+      //  sad.scrapAllDataInFile();
+       testProgram tp = new testProgram();
      //   tp.getCirculars("http://www.sbp.org.pk/circulars/cir.asp");
      //   tp.getYears("http://www.sbp.org.pk/acd/index.htm");
-     //  tp.getDataInsideCircular("http://www.sbp.org.pk/bprd/2014/index.htm");
+       tp.getDataInsideCircular("http://www.sbp.org.pk/acd/2016/index.htm");
    //     tp.readCircular("http://www.sbp.org.pk/acd/2017/C3.htm");
       //tp.bestFood("http://www.karachisnob.com/restaurants-karachi.htm");
     }

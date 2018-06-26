@@ -114,21 +114,30 @@ public class testProgram {
 //    }
        
 // =========================================================================================
-
+public static final String NBSP_IN_UTF8 = "\u00a0"; 
  public void getDataInsideCircular(String link) {
         try{
             Document document;
             
             document = Jsoup.connect(link).get();
-            
-            Elements circularData = document.select("td[height=26]"); 
+            //<font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000000">
+           // Elements circularData = document.select("td[height=26]"); 
+            Elements circularData = document.select("tr[bgcolor=#f8f8f8]"); 
             Elements circularDescriptionLink = document.select("tr[bgcolor=#f8f8f8] a");
             
             System.out.println("Circular data  size = " + circularData.size());
 
             System.out.println("\n\n Circular Data \n\n");
             for(int i=0;i<circularData.size();i++){
-                System.out.println(circularData.get(i).text());
+                
+            if ( !circularData.get(i).hasText() || circularData.get(i).text().replaceAll(NBSP_IN_UTF8, "").trim().equals("") )
+                {
+                 circularData.get(i).remove();
+                 continue;
+                }
+    
+  
+                System.out.println(". "+ circularData.get(i).text());
             }
             
            System.out.println("Circular Description Link = " + circularDescriptionLink.size());
@@ -139,7 +148,7 @@ public class testProgram {
            }
             
         }
-        catch(Exception e) {
+    catch(Exception e) {
             e.printStackTrace();
         }
     }
