@@ -118,7 +118,6 @@ public static final String NBSP_IN_UTF8 = "\u00a0";
  public void getDataInsideCircular(String link) {
         try{
             Document document;
-            
             document = Jsoup.connect(link).get();
             //<font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000000">
            // Elements circularData = document.select("td[height=26]"); 
@@ -162,8 +161,8 @@ public static final String NBSP_IN_UTF8 = "\u00a0";
             document = Jsoup.connect(link).get();
             
             Elements circularText = document.select("blockquote"); 
-            //Elements circularDescriptionLink = document.select("tr[bgcolor=#f8f8f8] a");
-            
+            Elements documentsLink = document.select("[href*=pdf]");
+           
             System.out.println("blockquote size = " + circularText.size());
 
             System.out.println("\n\n Circular Data \n\n");
@@ -171,12 +170,13 @@ public static final String NBSP_IN_UTF8 = "\u00a0";
                 System.out.println(circularText.get(i).text());
             }
             
-//           System.out.println("Circular Description Link = " + circularDescriptionLink.size());
-//           System.out.println("\n\n links \n\n");
+           System.out.println("Documents Link = " + documentsLink.size());
+           System.out.println("\n\n links \n\n");
 //           
-//            for (int i=0;i<circularDescriptionLink.size();i++){
-//           System.out.println(circularDescriptionLink.get(i).attr("abs:href"));
-//           }
+           for (int i=0;i<documentsLink.size();i++){
+               
+          System.out.println(documentsLink.get(i).attr("abs:href"));
+          }
             
         }
         catch(Exception e) {
