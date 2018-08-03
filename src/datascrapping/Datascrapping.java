@@ -16,18 +16,23 @@ public class Datascrapping {
      */
     public static void main(String[] args) {
         
-        departmentWiseScrapping dws = new departmentWiseScrapping();
-        dws.scrapDepartment("http://www.sbp.org.pk/bid/index.htm");
-
+     //   departmentWiseScrapping dws = new departmentWiseScrapping();
+      //  dws.scrapDepartment("http://www.sbp.org.pk/acd/2018/index.htm");
+     // dws.scrapDepartment4("http://www.sbp.org.pk/bprd/2018/index.htm");
         // TODO code application logic here
        // ScrapAllData sad = new ScrapAllData();
       //  sad.scrapAllDataInFile();
-      // testProgram tp = new testProgram();
+     // testProgram tp = new testProgram();
      //   tp.getCirculars("http://www.sbp.org.pk/circulars/cir.asp");
      //   tp.getYears("http://www.sbp.org.pk/acd/index.htm");
-     //  tp.getDataInsideCircular("http://www.sbp.org.pk/acd/2018/index.htm");
+     //  tp.getDataInsideCircular("http://www.sbp.org.pk/bprd/2017/index.htm");
       //  tp.readCircular("http://www.sbp.org.pk/acd/2018/C1.htm");
       //tp.bestFood("http://www.karachisnob.com/restaurants-karachi.htm");
+  
+    TestProgramForSECP secp = new TestProgramForSECP();
+    secp.getLaws("http://www.sbp.org.pk/bsrvd/2013/index.htm");
+    
+    
     }
     
 }

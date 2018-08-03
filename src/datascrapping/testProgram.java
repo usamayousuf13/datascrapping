@@ -121,7 +121,8 @@ public static final String NBSP_IN_UTF8 = "\u00a0";
             document = Jsoup.connect(link).get();
             //<font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#000000">
            // Elements circularData = document.select("td[height=26]"); 
-            Elements circularData = document.select("tr[bgcolor=#f8f8f8]"); 
+          //  Elements circularData = document.select("tr[bgcolor=#f8f8f8]"); 
+          Elements circularData = document.select("td[height=26][bgcolor=#f0f0f0]");
             Elements circularDescriptionLink = document.select("tr[bgcolor=#f8f8f8] a");
             
             System.out.println("Circular data  size = " + circularData.size());
@@ -152,7 +153,6 @@ public static final String NBSP_IN_UTF8 = "\u00a0";
         }
     }
 // =========================================================================================     
-     
      
       public void readCircular(String link) {
         try{
